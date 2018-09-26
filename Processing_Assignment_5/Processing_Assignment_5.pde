@@ -22,8 +22,8 @@ void draw () {
 	
 	for (int i = 0; i < balls.length; ++i) {
 		Ball ball = balls[i];
-		ball.move();
 		ball.bounce();
+		ball.move();
 		ball.display();
 	}
 

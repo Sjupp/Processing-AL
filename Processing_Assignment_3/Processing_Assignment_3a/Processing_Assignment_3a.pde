@@ -17,13 +17,13 @@ void draw()
   println(sin(frame));
 
   stroke(0,0,255);
-  for (int i = 0; i < width; i = i + 10) {
+  for (float i = 0; i < width; i = i + 6.4) {
     point(i, (height / 2) + sin((i + frame) * frequency) * amplitude);
   }
 
 
   stroke(255,0,0);
-  for (int i = 0; i < width; i = i + 10) {
+  for (float i = 0; i < width; i = i + 6.4) {
     point(i, (height / 2) + cos((i + frame) * frequency) * amplitude);
   }
 

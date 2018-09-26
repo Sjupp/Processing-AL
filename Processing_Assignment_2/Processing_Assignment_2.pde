@@ -22,20 +22,14 @@ void draw()
   int origox = 100;
   int origoy = 100;
   
-  float parableHeight = 150;
+  float parableHeight = 151;
   
   float arg2x = 0;
-  float arg2y = 100;
   
   int arbitraryValue = 0;
-  
-  //pixel-hopp (ökar per skriven rad)
-  float offset = 0;
 
 	for (int k = arbitraryValue; k < arbitraryValue + parableHeight; k = k + 10) {
 	
-		line(origox + offset, origoy + k, origox + arg2x + k,  origoy + parableHeight);
-
-    	offset = offset + 0.5;
+		line(origox, origoy + k, origox + arg2x + k,  origoy + parableHeight);
 		}
 }

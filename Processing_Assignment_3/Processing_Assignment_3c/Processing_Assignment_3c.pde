@@ -1,6 +1,6 @@
 int frames = 0;
 int j = 0;
-float radius = 100;
+float radius = 480;
   
 void setup()
 {
@@ -10,15 +10,9 @@ void setup()
 
 void draw()
 {
-  
-  background(255);
-  
-
   int numberOfPoints = 5;
   
-    j = frames % 200;
-  
-  println (j);
+    j = frames % 400;
   
   if (j == 3)
   {
@@ -34,8 +28,6 @@ void draw()
   point((width / 2) + cos((TWO_PI * i + frames) / numberOfPoints) * radius,
         (height / 2) + sin((TWO_PI * i + frames) / numberOfPoints) * radius);
   }
-  
 
-  
   frames++;
 }

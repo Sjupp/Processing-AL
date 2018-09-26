@@ -1,10 +1,12 @@
 float mouseChaserSpeed = 5;
+PVector mouseChaserVector,
         mousePointerVector,
         mouseChaserDirection,
         ballVector,
         ballVectorDirection;
-
-
+  
+void setup() {
+  size(640, 480);
   strokeWeight(5);
   
   mouseChaserVector = new PVector(100,100);
@@ -12,7 +14,7 @@ float mouseChaserSpeed = 5;
   
   ballVector = new PVector(30,30);
   ballVectorDirection = new PVector(1,1);
-}
+}  
 
 void draw() {
   

@@ -18,51 +18,44 @@ float timePerFrame = 0.016f;
 
 int numberOfHumanoids = 100;
 
-Humanoid[] humanoids = new Humanoid[numberOfHumanoids];
+CharacterManager charMgr;
 
 public void setup() {
 	
-	
-	for (int i = 0; i < numberOfHumanoids; ++i) {
-		humanoids[i] = new Humanoid();
-	}
+	charMgr = new CharacterManager(numberOfHumanoids);
 }
 
 public void draw() {
 	background(255);
 
-	for (int i = 0; i < humanoids.length; ++i) {
-		Humanoid humanoid = humanoids[i];
-		humanoid.move();
-		humanoid.bounce();
-		humanoid.draw();			
+	charMgr.update();
+}
+class CharacterManager {
+	Humanoid[] humanoids;
+
+	public CharacterManager (int amount) {
+		humanoids = new Humanoid[amount];
+
+		for (int i = 0; i < humanoids.length; ++i) {
+			humanoids[i] = new Humanoid();
+		}
+	}
+
+	public void update(){
+		for (int i = 0; i < humanoids.length; ++i) {
+			humanoids[i].move();
+			humanoids[i].bounce();
+			humanoids[i].draw();
+		}
 	}
 
 }
-// class CharacterManager {
-// 	Humanoid[] humanoids;
-
-// 	public CharacterManager (int amount) {
-// 		humanoids = new Humanoid[amount];
-
-// 		for (int i = 0; i < humanoids.length; ++i) {
-// 			//some code for creating humanoids
-// 		}
-// 	}
-
-// 	void update(){
-// 		for (int i = 0; i < humanoids.length; ++i) {
-// 			humanoids[i].update();
-// 		}
-// 	}
-
-// }
 class Humanoid {
 	PVector position, velocity;
 
 	public Humanoid() {
-		position = new PVector(10,10);
-		velocity = new PVector(50,50);
+		position = new PVector(random(width), random(height));
+		velocity = new PVector(random(1), random(1));
 	}
 
 	public void move() {

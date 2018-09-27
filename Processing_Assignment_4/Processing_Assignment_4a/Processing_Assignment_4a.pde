@@ -7,13 +7,15 @@ PVector mouseChaserVector,
   
 void setup() {
   size(640, 480);
-  strokeWeight(5);
+  strokeWeight(2);
   
   mouseChaserVector = new PVector(100,100);
   mouseChaserDirection = new PVector(0,0);
   
   ballVector = new PVector(30,30);
   ballVectorDirection = new PVector(1,1);
+  
+  ellipseMode(CENTER);
 }  
 
 void draw() {
@@ -22,7 +24,8 @@ void draw() {
   mousePointerVector = new PVector(mouseX, mouseY);
   
   // --- Mouse Pointer & Chaser ---
-  point(mouseChaserVector.x, mouseChaserVector.y);
+  ellipse(mouseChaserVector.x, mouseChaserVector.y, 10, 10);
+  line(mouseChaserVector.x, mouseChaserVector.y, mouseChaserVector.x + mouseChaserDirection.x * 10, mouseChaserVector.y + mouseChaserDirection.y * 10);
   mouseChaserVector.x += mouseChaserDirection.x * mouseChaserSpeed;
   mouseChaserVector.y += mouseChaserDirection.y * mouseChaserSpeed;
   

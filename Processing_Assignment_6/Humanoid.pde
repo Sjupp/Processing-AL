@@ -2,8 +2,8 @@ class Humanoid {
 	PVector position, velocity;
 
 	public Humanoid() {
-		position = new PVector(10,10);
-		velocity = new PVector(50,50);
+		position = new PVector(random(width), random(height));
+		velocity = new PVector(random(1), random(1));
 	}
 
 	void move() {

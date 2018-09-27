@@ -24,7 +24,7 @@ void evenlySpacedCircle(int numberOfPoints, float radius) {
 void evenlySpacedSpiral(int numberOfPoints, float radius, float increase) {
     for (int i = 0; i < numberOfPoints; i++)
   {
-    point(((width / 4) * 3) + cos((TWO_PI * i)) * radius,
+    point(((width / 4) * 3) + cos((TWO_PI * i) / numberOfPoints) * radius,
       (height / 2) + sin((TWO_PI * i) / numberOfPoints) * radius);
       radius += increase;
   }

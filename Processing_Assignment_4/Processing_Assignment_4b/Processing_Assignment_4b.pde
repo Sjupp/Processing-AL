@@ -79,8 +79,16 @@ void compareVectors(PVector vect1, PVector vect2) {
 	float resultY = round(vect1.y - vect2.y);
 
 	String str0 = "Ditt din linje avviker med " + resultX * -1 + " i x-led och " + resultY * -1 + " i y-led.";
-	String str1 = "Du får 5 poång!";
+	String str1 = "Du får 5 (" + scoreCalculator(resultX, resultY) + ") poång!";
 
 	text(str0, width / 2 - textWidth(str0) / 2, 300);
 	text(str1, width / 2 - textWidth(str1) / 2, 350);
+}
+
+float scoreCalculator(float x, float y) {
+  if (x > 0) x *= -1;
+  if (y > 0) y *= -1;
+  float z = 1000 + x + y;
+  
+return z;
 }

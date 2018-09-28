@@ -21,6 +21,7 @@ class Humanoid {
 	}
 
 	void draw() {
+		fill(128);
 		ellipse(position.x, position.y, 20, 20);
 	}
 

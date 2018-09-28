@@ -37,7 +37,7 @@ class CharacterManager {
 		humanoids = new Humanoid[amount];
 
 		for (int i = 0; i < humanoids.length; ++i) {
-			humanoids[i] = new Humanoid();
+			humanoids[i] = new Human();
 		}
 	}
 
@@ -49,6 +49,12 @@ class CharacterManager {
 		}
 	}
 
+}
+class Human extends Humanoid {
+
+	public Human() {
+		super();
+	}
 }
 class Humanoid {
 	PVector position, velocity;
@@ -73,6 +79,7 @@ class Humanoid {
 	}
 
 	public void draw() {
+		fill(128);
 		ellipse(position.x, position.y, 20, 20);
 	}
 

@@ -5,7 +5,7 @@ class CharacterManager {
 		humanoids = new Humanoid[amount];
 
 		for (int i = 0; i < humanoids.length; ++i) {
-			humanoids[i] = new Humanoid();
+			humanoids[i] = new Human();
 		}
 	}
 
